@@ -19,7 +19,6 @@ export function startFocusAt(centre: Vec, nowMs: number): Vec {
 }
 
 const NO_POINTER: PointerState = {
-  hoverTile: null,
   click: null,
   highlight: null,
 };

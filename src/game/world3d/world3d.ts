@@ -151,7 +151,7 @@ export function createWorld3d(shared: SharedCanvas): World3d {
   const atmosphere = createAtmosphere();
   scene.add(atmosphere.embers);
   const markers = createMarkers();
-  scene.add(markers.click, markers.hover);
+  scene.add(markers.click);
   const townPortals = townPortalMeshesOf();
   scene.add(townPortals.group);
   const boneAltars = boneAltarMeshesOf();

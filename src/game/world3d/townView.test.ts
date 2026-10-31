@@ -5,7 +5,6 @@ import { NPC_LOOKS } from "./npcLook";
 import { type PointerState, worldViewOf } from "./view";
 
 const NO_POINTER: PointerState = {
-  hoverTile: null,
   click: null,
   highlight: null,
 };

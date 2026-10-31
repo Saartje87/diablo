@@ -105,7 +105,7 @@ import {
 } from "./save";
 import { isFloor, TOWN } from "./sim/area";
 import { cursorItemOf, type ItemId } from "./sim/inventory";
-import { tileOf, type Vec } from "./sim/vec";
+import type { Vec } from "./sim/vec";
 import {
   type MonsterId,
   type Order,
@@ -772,16 +772,8 @@ export default function GameCanvas() {
           focus?.rect ?? null,
           itemInReach,
         );
-        // The tile to outline: on the floor, under no panel or Monster.
-        const under =
-          pointer &&
-          !renderer.panelAt(pointer) &&
-          renderer.monsterAt(pointer) === null
-            ? tileOf(screenToTile(worldCamera, pointer))
-            : null;
         const shown = world.areas[world.areaName];
         const pointerState: PointerState = {
-          hoverTile: under && isFloor(shown, under) ? under : null,
           highlight: renderer.highlightedCharacter(),
           click: lastClick && {
             at: lastClick.at,

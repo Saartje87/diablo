@@ -253,8 +253,6 @@ export type ClickMarkerView = { at: Vec; progress: number };
 
 /** What the pointer shows in the World. */
 export type PointerState = {
-  /** The floor tile to outline, if the pointer is over one. */
-  hoverTile: Vec | null;
   /** The last click on the floor and how long ago it was. */
   click: { at: Vec; ageMs: number } | null;
   /** The Monster or Minion to outline: the hovered one, else the Target. */
@@ -282,7 +280,6 @@ export type WorldView = {
   groundItems: GroundItemView[];
   goldPiles: GoldPileView[];
   clickMarker: ClickMarkerView | null;
-  hoverTile: Vec | null;
   /**
    * The Area's Walls drawn lowered to stubs, so they don't hide the Hero:
    * indices into its `walls`, ascending.
@@ -478,7 +475,6 @@ export function worldViewOf(
       pos: { ...pos },
     })),
     clickMarker: clickMarkerOf(pointer.click),
-    hoverTile: pointer.hoverTile,
     loweredWalls,
     torches: torchesIn(area).map((torch) => ({
       ...torch,

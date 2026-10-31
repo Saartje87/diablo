@@ -7,7 +7,6 @@ import { GOLD_LOOKS, goldPlacement, LOOT_MODELS } from "./lootLook";
 import { type PointerState, worldViewOf } from "./view";
 
 const NO_POINTER: PointerState = {
-  hoverTile: null,
   click: null,
   highlight: null,
 };

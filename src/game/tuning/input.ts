@@ -38,6 +38,19 @@ export type InputTuning = {
    * instead of tapping it (ms).
    */
   longPressMs: number;
+  /** The bone-ash puff the click marker shows. */
+  clickPuff: {
+    /** How many motes it has. */
+    motes: number;
+    /** How far a mote spreads from the click point at most (tiles). */
+    reach: number;
+    /** How high a mote rises at most (tiles). */
+    rise: number;
+    /** How big a mote is at most (tiles across). */
+    size: number;
+    /** The motes' colour, the same in every Area. */
+    colour: number;
+  };
 };
 
 export const inputTuning: InputTuning = {
@@ -50,4 +63,11 @@ export const inputTuning: InputTuning = {
   npcReach: 2,
   castDistance: 3,
   longPressMs: 450,
+  clickPuff: {
+    motes: 8,
+    reach: 0.5,
+    rise: 0.15,
+    size: 0.09,
+    colour: 0xe6dcc3,
+  },
 };
